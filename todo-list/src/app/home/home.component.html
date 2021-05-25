@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row" style="margin-top: 40px;">
+      <div class="col" style="max-width: 33%;">
+        <h3 style="text-align: center; background-color: lightgray;">TO DO</h3>
+        <div style="margin-top: 20px; border: solid 2px black; padding: 10px;" *ngFor="let task of tasks_todo | async">
+            <h5 style="text-align: center; word-break: break-all;">{{task.title}}</h5>
+            <p style="word-break: break-all;">Description : {{task.description}}</p>
+            <p style="word-break: break-all;">Due date : {{task.due_date}}</p>
+            <div *ngFor="let user of users | async">
+              <p *ngIf="user._id == task.idUser" style="word-break: break-all;">User : {{user.username}}</p>
+            </div>
+            <button class="btn btn-primary"><a style="color: white; text-decoration: none;" 
+              href="/update_task?task_id={{task._id}}&title={{task.title}}&description={{task.description}}&due_date={{task.due_date}}&state={{task.state}}&idUser={{task.idUser}}"
+              >EDIT</a></button>
+            <button class="btn btn-danger" style="margin-left: 30px;" (click)="delete_task(task._id)"><a style="color: white; text-decoration: none;" href="/home">DELETE</a></button>
+        </div>
+      </div>
+      <div class="col" style="max-width: 33%;">
+        <h3 style="text-align: center; background-color: lightyellow;">IN PROGRESS</h3>
+        <div style="margin-top: 20px; border: solid 2px black; padding: 10px;" *ngFor="let task of tasks_in_progress | async">
+          <h5 style="text-align: center; word-break: break-all;">{{task.title}}</h5>
+          <p style="word-break: break-all;">Description : {{task.description}}</p>
+          <p style="word-break: break-all;">Due date : {{task.due_date}}</p>
+          <div *ngFor="let user of users | async">
+            <p *ngIf="user._id == task.idUser" style="word-break: break-all;">User : {{user.username}}</p>
+          </div>
+          <button class="btn btn-primary"><a style="color: white; text-decoration: none;" 
+            href="/update_task?task_id={{task._id}}&title={{task.title}}&description={{task.description}}&due_date={{task.due_date}}&state={{task.state}}&idUser={{task.idUser}}"
+            >EDIT</a></button>
+          <button class="btn btn-danger" style="margin-left: 30px;" (click)="delete_task(task._id)">DELETE</button>
+      </div>
+      </div>
+      <div class="col" style="max-width: 33%;">
+        <h3 style="text-align: center; background-color: lightgreen;">DONE</h3>
+        <div style="margin-top: 20px; border: solid 2px black; padding: 10px;" *ngFor="let task of tasks_done | async">
+          <h5 style="text-align: center; word-break: break-all;">{{task.title}}</h5>
+          <p style="word-break: break-all;">Description : {{task.description}}</p>
+          <p style="word-break: break-all;">Due date : {{task.due_date}}</p>
+          <div *ngFor="let user of users | async">
+            <p *ngIf="user._id == task.idUser" style="word-break: break-all;">User : {{user.username}}</p>
+          </div>
+          <button class="btn btn-primary"><a style="color: white; text-decoration: none;" 
+            href="/update_task?task_id={{task._id}}&title={{task.title}}&description={{task.description}}&due_date={{task.due_date}}&state={{task.state}}&idUser={{task.idUser}}"
+            >EDIT</a></button>
+          <button class="btn btn-danger" style="margin-left: 30px;" (click)="delete_task(task._id)">DELETE</button>
+      </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+<div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0" style="border-radius: 8px !important;">
+            <div class="card-header">
+                <h3 class="mb-0">Task Information</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <!-- TITLE -->
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                            <div *ngIf="f.title.errors.required">Title is required</div>
+                        </div>
+                    </div>
+                    <!-- DESCRIPTION -->
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="description">Description</label>
+                        <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                            <div *ngIf="f.description.errors.required">Description is required</div>
+                        </div>
+                    </div>
+                    <!-- DUE DATE -->
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="due_date">Due date</label>
+                        <input type="datetime-local" formControlName="due_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.due_date.errors }" />
+                        <div *ngIf="submitted && f.due_date.errors" class="invalid-feedback">
+                            <div *ngIf="f.due_date.errors.required">Due date is required</div>
+                        </div>
+                    </div>
+                    <!-- STATE -->
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="state">State</label>
+                        <select formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                            <option value="1" selected>TO DO</option>
+                            <option value="2">IN PROGRESS</option>
+                            <option value="3">DONE</option>
+                        </select>
+                        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                            <div *ngIf="f.state.errors.required">State is required</div>
+                        </div>
+                    </div>
+                    <!-- ID USER -->
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="idUser">User</label>
+                        <select formControlName="idUser" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idUser.errors }">
+                            <option *ngFor="let user of users | async" [value]="user._id" >
+                                {{user.username}}
+                            </option>
+                        </select>
+                        <div *ngIf="submitted && f.idUser.errors" class="invalid-feedback">
+                            <div *ngIf="f.idUser.errors.required">User is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Create
+                        </button>
+                        <a routerLink="../home" class="btn btn-link">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
