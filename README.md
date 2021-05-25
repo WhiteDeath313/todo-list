@@ -1,36 +1,27 @@
-# Web Technologies Module Assignment: To-do List (Angular, NodeJS)
-Web Technologies Assignment 4: Create a single page application using the frameworks of NodeJS and Angular. For this assignment we're creating To-do List.
+# TodoList
 
-## Technologies used:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
-- Angular
-- NodeJS
-- JavaScript
-- HTML
-- CSS
+## Development server
 
-## Problems / Got-cha's
-### Current Problems:
-- None as of the time this README was last updated. (25/05/21)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Installation
+## Code scaffolding
 
-First you need to launch the server, open a terminal
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-  `cd server`
-  
-Install the dependencies
-  
-  `npm install`
-  
-Launch server
+## Build
 
-  `npm run dev`
-  
-After you need another terminal, go in todo-list folder
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-  `cd todo-list`
-  
-And launch the client side
+## Running unit tests
 
-  `ng serve -o`
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
