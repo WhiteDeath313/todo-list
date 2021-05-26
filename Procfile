@@ -1,1 +1,1 @@
-web: ng build-serve
+web: npm run build-serve
