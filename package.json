@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-serve": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 ./node_modules/@angular/cli/bin/ng serve",
-    "heroku-postbuild": "ng build --aot --prod"
+    "build-serve": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 ./node_modules/@angular/cli/bin/ng serve"
   },
   "engines": {
     "node": "14.16.1",
