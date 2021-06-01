@@ -1,1 +1,1 @@
-web: node --optimize_for_size --max_old_space_size=920 ./node_modules/@angular/cli/bin/ng serve --configuration production
+web: node --optimize_for_size --max_old_space_size=920 ./node_modules/@angular/cli/bin/ng serve --configuration production --host 0.0.0.0
