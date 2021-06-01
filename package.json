@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "save-cmd": "node --optimize_for_size --max_old_space_size=920 ./node_modules/@angular/cli/bin/ng serve"
   },
   "engines": {
     "node": "14.16.1",
