@@ -32,11 +32,11 @@ const routes: Routes = [
     component: UpdateTaskComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'login',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
   {
     path: '**',
     component: PageNotFoundComponent
